@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import './App.css'
-
+import { useState } from "react";
+import SignUp from "./components/Signup";
+import "./App.css";
+import "./style.scss"
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      APP
+      <SignUp />
+    
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
