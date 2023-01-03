@@ -1,5 +1,5 @@
 .formContainer{
-    background: #eaa3fa;
+    background: #C0EEE4;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -16,7 +16,7 @@
         gap: 10px;
 
         .logo{
-            color: #a840bf;
+            color: #FF9E9E;
             font-weight: 700;
             font-size: 24px;
         }
@@ -33,7 +33,7 @@
                 background:#f1f1f1;
                 padding: 10px;
                 border: none;
-                border-bottom: 2px solid #eaa3fa7e;
+                border-bottom: 2px solid #C0EEE4;
                
                 &::placeholder{
                     color: #676666;
@@ -46,7 +46,7 @@
             }
 
             button{
-                background: #d265ebca;    
+                background: #FF9E9E;    
                 color: #f1f1f1;
                 padding: 10px;
                 font-weight: 600;
@@ -70,5 +70,209 @@
             }
         }
   
+    }
+}
+
+
+.home{
+    background: #C0EEE4;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    color: #676666;
+
+    .container{
+        border: 2px solid #d2d2d2;
+        border-radius:5px;
+        width: 70%;
+        height: 80%;
+        display: flex;
+        overflow: hidden;
+
+
+        .sidebar{
+            flex: 1;
+            border-right: 1px solid #f1f1f1;
+            background: #FFCAC8;
+            overflow-y: auto;
+
+
+            .navbar{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #FF9E9E;
+                height: 50px;
+                padding: 10px;
+
+                .logo{
+                    font-weight: 700;
+                }
+                .user{
+                    display: flex;
+                    gap: 10px;
+
+                    img{
+                        background-color: #f5f5f5;
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 50%;
+                    }
+
+                    button{
+                        background-color: #FFCAC8;
+                        font-size: 10px;
+                        border: none;
+                        cursor: pointer;
+
+                        &:hover{
+                            color:#676666;
+                        }
+                    }
+                }
+
+
+            }
+
+            .search{
+                border-bottom: 1px solid #bdbdbda2;
+                .searchForm{
+                    padding: 10px;
+
+                    input{
+                        width: 100%;
+                        background-color: transparent;
+                        border: none;
+                        color: #f1f1f1;
+                        outline: none;
+
+                        &::placeholder{
+                            color: #676666;
+                        }
+                    }
+                }
+
+                
+            }
+            .chats{
+                 .userChat{
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: #f1f1f1;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: #FF9E9E;
+                }
+                    img{
+                        width: 50px;
+                        height: 50px;
+                       border-radius: 50%; 
+                       object-fit: cover;
+                    }
+                 
+                    .userChatInfo{
+                        span{
+                            font-size: 18px;
+                            font-weight: 700;
+                        }
+                        p{
+                            font-size: 14px;
+                            color: #8a8a8a;
+
+                        }
+                    }
+            }
+            }
+           
+        }
+        .chatroom{
+            flex: 2;
+            // border: 1px solid #f1f1f1;
+            .chatInfo{
+                height: 50px;
+                background-color: #FFCAC8;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px;
+                color: #8a8a8a;
+                // gap: 20px;
+                .chatIcons{
+                    display: flex;
+                    gap: 10px;
+
+                    img{
+                    height: 20px;
+                    filter:opacity(0.66);
+                    cursor: pointer;
+                    &:hover{
+                        filter: opacity(0.5);
+                    }
+                    // border: #5b5b5bc8 solid 2px;
+                }
+                }
+                
+            }
+
+            .messages{
+                background-color: #f2f495d3;
+                padding: 10px;
+                height: calc(100% - 160px);
+            }
+            .inputMsg{
+                height: 50px; 
+                background-color: #f5f5f5;
+                padding: 10px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center ;
+
+                input{
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    color: #012149;
+                    font-size: 18px;
+
+                    &::placeholder{
+                        color: #8a8a8a;
+                    }
+                }
+                .send{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    img{
+                        height: 24px;
+                        filter: opacity(0.7);
+                        cursor: pointer;
+                        &:hover{
+                            filter: opacity(0.8);
+                        }
+
+                    }
+                    button{
+                        border: none;
+                        padding: 10px 15px;
+                        color: #d2d2d2;
+                        background-color: #FFCAC8;
+                        border-radius: 4px;
+                         filter: opacity(0.7);
+                        cursor: pointer;
+                        img{ height: 24px;} 
+                         &:hover{  filter: opacity(0.8); }
+                        
+
+                    }
+                }
+            }
+        }
+        
     }
 }
