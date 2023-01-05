@@ -8,7 +8,7 @@ function Input() {
             <label htmlFor="file">
             <img src="https://img.icons8.com/material-outlined/100/null/image.png"/>
             </label>
-            <button><img src="https://img.icons8.com/ios-glyphs/100/null/filled-sent.png"/></button>
+            <button><img src="https://img.icons8.com/ios-glyphs/400/null/filled-sent.png"/></button>
         </div>
     </div>
     </> );

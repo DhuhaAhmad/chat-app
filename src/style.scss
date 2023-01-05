@@ -223,6 +223,55 @@
                 background-color: #f2f495d3;
                 padding: 10px;
                 height: calc(100% - 160px);
+                overflow-y: scroll;
+
+                .message{
+                    display: flex;
+                    grid-template: 20px;
+                    // border: #012149 solid 2px;
+                    margin-bottom: 20px;
+
+                    .messageInfo{
+                        display: flex;
+                        flex-direction: column;
+                        color: #676666;
+                        font-weight: 300;
+                        img{
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+                    }
+                    .messageContent{
+                        max-width: 70%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        p{
+                            background-color: #f1f1f1;
+                            padding: 10px 20px;
+                            border-radius: 0px 10px 10px 10px;
+                            max-width: max-content;
+                        }
+                        img{
+                            width: 50%;
+                        }
+                    }
+
+                    &.owner{
+                        flex-direction: row-reverse;
+                        .messageContent{
+                            align-items: flex-end;
+                        p{
+                            background-color:#FF9E9E;
+                            color: #fff;
+                            border-radius: 10px 0px 10px 10px;
+                        }
+                    }
+                    }
+                }
             }
             .inputMsg{
                 height: 50px; 
@@ -263,9 +312,13 @@
                         color: #d2d2d2;
                         background-color: #FFCAC8;
                         border-radius: 4px;
+                        display: flex;
+                        align-items: center;
                          filter: opacity(0.7);
                         cursor: pointer;
+
                         img{ height: 24px;} 
+
                          &:hover{  filter: opacity(0.8); }
                         
 
