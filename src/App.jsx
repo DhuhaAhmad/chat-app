@@ -7,9 +7,9 @@ import "./style.scss"
 function App() {
   return (
     <div className="App">
-      {/* <SignUp /> */}
+      <SignUp />
       {/* <LogIn/> */}
-      <Home/>
+      {/* <Home/> */}
     
     </div>
   );
