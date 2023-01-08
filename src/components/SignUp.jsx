@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { auth, storage } from "../firebase";
+import { doc, setDoc } from "firebase/firestore"; 
+import { auth, storage,db } from "../firebase";
 import { useState } from "react";
 
 function SignUp() {
@@ -12,7 +13,7 @@ function SignUp() {
     const email = e.target[1].value;
     const password = e.target[2].value;
     const file = e.target[3].files[0];
-    console.log(file)
+    // console.log(file)
 
     try {
       const response = await createUserWithEmailAndPassword(
@@ -20,7 +21,7 @@ function SignUp() {
         email,
         password
       );
-
+        console.log(response.user);
       //  name image in storage - used dispaly name -
       const storageRef = ref(storage, dispalyName);
 
@@ -36,11 +37,23 @@ function SignUp() {
           getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
             await updateProfile(response.user, {
               dispalyName,
-              photoURL: downloadURL,
+              photoURL: downloadURL
             });
+
+              // Add user to database
+            await setDoc(doc(db,"users",response.user.uid),{
+              uid:response.user.uid,
+              dispalyName,
+              email,
+              photoURL: downloadURL
+            })
+
+            console.log("********** 51 ************")
           });
         }
       );
+
+      
     } catch (error) {
       setErr(true);
     }
