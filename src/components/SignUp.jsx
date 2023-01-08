@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore"; 
@@ -7,14 +7,14 @@ import { useState } from "react";
 
 function SignUp() {
   const [err, setErr] = useState(false);
-
+  const navigate = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault();
     const dispalyName = e.target[0].value;
     const email = e.target[1].value;
     const password = e.target[2].value;
     const file = e.target[3].files[0];
-    // console.log(file)
+    // console.log(file.name)
 
     try {
       const response = await createUserWithEmailAndPassword(
@@ -41,6 +41,7 @@ function SignUp() {
               photoURL: downloadURL
             });
 
+
               // Add user to database
             await setDoc(doc(db,"users",response.user.uid),{
               uid:response.user.uid,
@@ -49,7 +50,11 @@ function SignUp() {
               photoURL: downloadURL
             })
 
+            await setDoc(doc(db,"userChats",response.user.uid),{})
+            navigate("/")
+
             console.log("********** 51 ************")
+
           });
         }
       );
