@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore"; 
@@ -78,7 +79,8 @@ function SignUp() {
             <button>Sign up</button>
             {err && <span>Somthing went wrong</span>}
           </form>
-          <p>You do have an account? Login</p>
+          
+          <p>You do have an account? <Link to={"/login"}>Login</Link> </p>
         </div>
       </div>
     </>

@@ -16,14 +16,14 @@ function App() {
 <Routes>
   <Route path="/">
     <Route index element={<Home/>}/>
-    <Route path="signup" element={<SignUp/>}/>
-    <Route path="login" element={<LogIn/>}/>
+    <Route exact path="signup" element={<SignUp/>}/>
+    <Route exact path="login" element={<LogIn/>}/>
 
   </Route>
 </Routes>
     </BrowserRouter>
     {/* <div className="App"> */}
-      <SignUp />
+      {/* <SignUp /> */}
       {/* <LogIn/> */}
       {/* <Home/> */}
     

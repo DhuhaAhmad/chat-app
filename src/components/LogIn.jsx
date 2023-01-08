@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function LogIn() {
     return (  <>
        <div className="formContainer">
@@ -9,7 +11,7 @@ function LogIn() {
                 <input type="password" placeholder="Password"/>
                 <button>Log In</button>
             </form>
-            <p>You don't have an account? Sign up</p>
+            <p>You don't have an account? <Link to={"/signup"}>Sign up</Link> </p>
         </div>
     </div>
     </>);
