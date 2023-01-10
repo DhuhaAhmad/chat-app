@@ -10,11 +10,11 @@ function SignUp() {
   const navigate = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const dispalyName = e.target[0].value;
+    const displayName = e.target[0].value;
     const email = e.target[1].value;
     const password = e.target[2].value;
     const file = e.target[3].files[0];
-    // console.log(file.name)
+    // console.log(dispalyName)
 
     try {
       const response = await createUserWithEmailAndPassword(
@@ -22,9 +22,9 @@ function SignUp() {
         email,
         password
       );
-        console.log(response.user);
+        // console.log(response.user.displayName);
       //  name image in storage - used dispaly name -
-      const storageRef = ref(storage, dispalyName);
+      const storageRef = ref(storage, displayName);
 
       const uploadTask = uploadBytesResumable(storageRef, file);
 
@@ -37,7 +37,7 @@ function SignUp() {
           // Handle successful uploads on complete
           getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
             await updateProfile(response.user, {
-              dispalyName,
+              displayName,
               photoURL: downloadURL
             });
 
@@ -45,7 +45,7 @@ function SignUp() {
               // Add user to database
             await setDoc(doc(db,"users",response.user.uid),{
               uid:response.user.uid,
-              dispalyName,
+              displayName,
               email,
               photoURL: downloadURL
             })
