@@ -1,47 +1,51 @@
+import { doc, onSnapshot } from "firebase/firestore";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../context/AuthContext";
+import { db } from "../firebase";
+
 function Chats() {
+
+  const [chats,setChats]=useState([])
+
+  const {currentUser} = useContext(AuthContext)
+
+  useEffect(()=>{
+
+    const getAllChats =()=>{
+         const unsub = onSnapshot(doc(db, "userChats", currentUser.uid), (doc) => {
+      setChats(doc.data())
+  }); 
+
+  return ()=>{
+    unsub()
+  }
+    }
+  
+
+ 
+
+  currentUser.uid && getAllChats()
+
+},[currentUser.uid])
+
   return (
     <>
       <div className="chats">
-        {/* ******************* */}
-        <div className="userChat">
-          <img src="https://img.icons8.com/doodle/100/null/user.png" />
+    
+        {
+          Object.entries(chats)?.map(chat=>{
+            return  (
+            <div className="userChat" key={chat[0]}>
+          <img src={chat[1].userInfo.photoURL} />
           <div className="userChatInfo">
-            <span>name</span>
-            <p>hello</p>
+            <span>{chat[1].userInfo.displayName}</span>
+            <p>{chat[1].userInfo.lastMessage?.text}</p>
           </div>
-        </div>
-        {/* ******************* */}
-        <div className="userChat">
-          <img src="https://img.icons8.com/doodle/100/null/user.png" />
-          <div className="userChatInfo">
-            <span>name</span>
-            <p>hello</p>
-          </div>
-        </div>
-        {/* ******************* */}
-        <div className="userChat">
-          <img src="https://img.icons8.com/doodle/100/null/user.png" />
-          <div className="userChatInfo">
-            <span>name</span>
-            <p>hello</p>
-          </div>
-        </div>
-        {/* ******************* */}
-        <div className="userChat">
-          <img src="https://img.icons8.com/doodle/100/null/user.png" />
-          <div className="userChatInfo">
-            <span>name</span>
-            <p>hello</p>
-          </div>
-        </div>
-        {/* ******************* */}
-        <div className="userChat">
-          <img src="https://img.icons8.com/doodle/100/null/user.png" />
-          <div className="userChatInfo">
-            <span>name</span>
-            <p>hello</p>
-          </div>
-        </div>
+        </div>)
+          })
+        }
+
+
       </div>
     </>
   );
