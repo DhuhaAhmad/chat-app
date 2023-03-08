@@ -1,4 +1,13 @@
-function Message() {
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+import { ChatContext } from "../context/ChatContext";
+
+function Message({message}) {
+
+    console.log(message)
+    const {currentUSer}=useContext(AuthContext)
+    const {data} = useContext(ChatContext)
+    
     return (<>
     <div className="message owner">
         <div className="messageInfo">

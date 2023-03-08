@@ -5,7 +5,7 @@ import Messages from "./Messages";
 
 function ChatRoom() {
     const {data} = useContext(ChatContext)
-    console.log(data.user)
+    // console.log(data.user)
     return ( <>
     <div className="chatroom">
         <div className="chatInfo">
