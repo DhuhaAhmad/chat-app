@@ -11,6 +11,7 @@ function Navbar() {
     return ( <>
     <div className="navbar">
         <span className="logo">Chat App</span>
+        {/* <span className="logo">{import.meta.env.VITE_API_KEY}</span> */}
         <div className="user">
         <img src={currentUser.photoURL}/>
             <span>{currentUser.displayName}</span>

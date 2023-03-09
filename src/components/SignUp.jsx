@@ -8,6 +8,8 @@ import { useState } from "react";
 function SignUp() {
   const [err, setErr] = useState(false);
   const navigate = useNavigate()
+
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     const displayName = e.target[0].value;
