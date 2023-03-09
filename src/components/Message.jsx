@@ -1,23 +1,34 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
 
 function Message({message}) {
 
-    console.log(message)
-    const {currentUSer}=useContext(AuthContext)
+    const {currentUser}=useContext(AuthContext)
     const {data} = useContext(ChatContext)
+
+    const ref = useRef()
+
+    useEffect(()=>{
+        console.log(ref)
+        ref.current?.scrollIntoView({behavior:"smooth"})
+    },[message])
     
     return (<>
-    <div className="message owner">
+    <div className={`message ${message.senderId === currentUser.uid && "owner"}`}
+    ref={ref}
+    >
         <div className="messageInfo">
-        <img src="https://img.icons8.com/doodle/100/null/user.png" />
+        <img src={message.senderId === currentUser.uid ? currentUser.photoURL : data.user.photoURL} />
         <span>Just now</span>
         </div>
         <div className="messageContent">
-        <p>Hello</p>
+        <p>{message.text}</p>
 
-<img src="https://img.freepik.com/free-vector/arizona-night-desert-landscape-natural-wild-west-background-with-coyote-pack-silhouettes-run-through-cacti-rocks-cloudy-sky-with-full-moon-shining-game-scene-cartoon-vector-illustration_107791-8446.jpg?w=360&t=st=1672865683~exp=1672866283~hmac=6d3db56623e4e997c087ae00661a8821e3f2cf6d2e8f3dccd44c44cc45b198ae" />
+{
+message.img && 
+<img src={message.img} />
+}
 
         </div>
 

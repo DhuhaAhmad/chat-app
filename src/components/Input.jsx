@@ -80,7 +80,6 @@ function Input() {
         value={text}
         />
         <div className="send">
-        {/* <img src="https://img.icons8.com/material-outlined/100/null/image.png"/> */}
             <input type="file"  id="file" style={{display:"none"}} onChange={e=>setImg(e.target.files[0])} />
             <label htmlFor="file">
             <img src="https://img.icons8.com/material-outlined/100/null/image.png"/>
