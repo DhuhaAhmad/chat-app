@@ -74,17 +74,30 @@ function Input() {
         setText("")
         setImg(null)
     }
+
+    const handleKeyDown = (e)=>{
+        if(e.key==="Enter"){
+            handleSend()
+        }
+    }
     return (<>
-    <div className="inputMsg">
+    <div className="inputMsg"
+        onKeyDown={e=>handleKeyDown(e)}
+
+    >
         <input type="text" placeholder="Write a message.." onChange={e=>setText(e.target.value)}
         value={text}
         />
         <div className="send">
-            <input type="file"  id="file" style={{display:"none"}} onChange={e=>setImg(e.target.files[0])} />
+            <input type="file"  id="file" style={{display:"none"}} onChange={e=>setImg(e.target.files[0])}
+            
+            />
             <label htmlFor="file">
             <img src="https://img.icons8.com/material-outlined/100/null/image.png"/>
             </label>
-            <button id="send" onClick={handleSend}><img src="https://img.icons8.com/ios-glyphs/400/null/filled-sent.png"/></button>
+            <button id="send" onClick={handleSend}
+
+            ><img src="https://img.icons8.com/ios-glyphs/400/null/filled-sent.png"/></button>
         </div>
     </div>
     </> );
