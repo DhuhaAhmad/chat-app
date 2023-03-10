@@ -1,9 +1,13 @@
 ﻿# Chat app
 
-Table of content 
-1- [About The Project](#About-The-Project)
 
+<details>
+<summary>Table of content</summary>
+
+1- [About The Project](#About-The-Project)
+  + [Built with](#Built-with)
+</details>
 
 ## About The Project
 
-Built with
+### Built with
