@@ -27,7 +27,9 @@
 ### Built with
 
 * [![React][React.js]][React-url]
+* [![Vite]][Vite-url]
 * [![Sass]][Sass-url]
+
 
 
 
@@ -40,3 +42,5 @@
 [React-url]: https://reactjs.org/
 [Sass]: https://img.shields.io/badge/Sass-000000?style=for-the-badge&logo=sass&logoColor=pink
 [Sass-url]: https://sass-lang.com/
+[Vite]: https://img.shields.io/badge/Vite-0769AD?style=for-the-badge&logo=vite&logoColor=pink
+[Vite-url]: https://vitejs.dev/
