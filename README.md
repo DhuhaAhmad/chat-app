@@ -29,7 +29,7 @@
 * [![React][React.js]][React-url]
 * [![Vite]][Vite-url]
 * [![Sass]][Sass-url]
-[![Firebase]][Firebase-url]
+* [![Firebase]][Firebase-url]
 
 
 
