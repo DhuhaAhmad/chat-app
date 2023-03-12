@@ -32,9 +32,36 @@
 * [![Firebase]][Firebase-url]
 
 
-
-
+<!-- GETTING STARTED -->
 ## Getting Started
+
+
+### Prerequisites
+
+  1. you need to install:
+* Node.js: [Node.js website][Node.js-url]
+2. Create a **project** in Firebase [create an account if you don't have][Firebase-url]
+3. Create **Web App** inside Firebase project.
+4. Start **Authentication**, **Firebase Database** and **Storage**.
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/your_username_/Project-Name.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Replace `firebase.js` file with your SDK configuration.
+
+4. Run the project
+    ```sh
+    npm run dev
+    ```
+  
+  
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
@@ -47,3 +74,4 @@
 [Vite-url]: https://vitejs.dev/
 [Firebase]: https://img.shields.io/badge/Firebase-0769AD?style=for-the-badge&logo=firebase&logoColor=orange
 [Firebase-url]: https://firebase.google.com/
+[Node.js-url]:https://nodejs.org/en/
