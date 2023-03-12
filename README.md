@@ -1,4 +1,5 @@
 ﻿# Chat app
+<a name="readme-top"></a>
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -24,12 +25,18 @@
 
 ## About The Project
 
+This project is a simple chat app that I followed a YouTube video to build. It will help me gain experience in software development
+
+**You can see the video here**: [The video][Youtube video-url]
 ### Built with
 
 * [![React][React.js]][React-url]
 * [![Vite]][Vite-url]
 * [![Sass]][Sass-url]
 * [![Firebase]][Firebase-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 <!-- GETTING STARTED -->
@@ -60,8 +67,13 @@
     ```sh
     npm run dev
     ```
+5. Create `.env` file and store an `apikey` in virable start with **VITE** keyword (optional) 
+    ```js
+    VITE_SOME_THING = yourapikey
+    ```
   
-  
+ <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
@@ -75,3 +87,4 @@
 [Firebase]: https://img.shields.io/badge/Firebase-0769AD?style=for-the-badge&logo=firebase&logoColor=orange
 [Firebase-url]: https://firebase.google.com/
 [Node.js-url]:https://nodejs.org/en/
+[Youtube video-url]:https://www.youtube.com/watch?v=k4mjF4sPITE
